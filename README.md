@@ -1,7 +1,9 @@
 # Casa Nira · Villa C3 — Upgraded Inventory
 
+**The Sanctuary C3 · David & Tjeerd**
+
 A single self-contained web page (`index.html`) showing the FF&E upgrade inventory and
-custom-branding catalog for **Villa C3 · The Sanctuary** (3BR, 160 sqm).
+custom-branding catalog for **Villa C3 · David & Tjeerd · The Sanctuary** (3BR, 160 sqm).
 Built on the shared Casa Nira inventory template.
 
 ## Baseline verification
@@ -59,12 +61,14 @@ Changed:
   **Quantity confirmed correct; left at ×1.** (C1/C2 count the individual ceiling
   speakers instead, which is why they read ×4.)
 
+- **Owner / estate naming confirmed by the team**: the villa is **The Sanctuary C3**, owners
+  **David & Tjeerd**. The page reads `VILLA C3 · DAVID & TJEERD` / `· THE SANCTUARY`, matching
+  the C7 and C1 pattern. (PT Alchemy Estate Group is the contracting entity in the
+  agreement, not the owner name used on the document.)
+
 ### Open items to confirm with the team
 - Annex I lists the bathtub and bathroom mirrors under *Master Bedroom* / *All Bedrooms*;
   the page uses *Master Bathroom* / *All Bathrooms* for clarity.
-- The villa pill reads **VILLA C3** with no owner name (the client is a company,
-  PT Alchemy Estate Group). Tell us if an owner name should appear.
-- "The Sanctuary" estate name is inferred from the C-block convention (not in the agreement).
 
 ## Structure
 Everything lives in **`index.html`** — HTML, CSS, and JS in one file, no build step and no
