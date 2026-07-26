@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>CASA NIRA · VILLA C3 · UPGRADED INVENTORY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E8E3DA;
+    --bg-soft: #EFEAE1;
+    --bg-card: #F2EEE6;
+    --ink: #000000;
+    --ink-soft: #1a1a1a;
+    --ink-mute: #6b665d;
+    --ink-faint: #9c9689;
+    --line: #cdc6b8;
+    --line-strong: #b8b09e;
+
+    --c-electronics: #2d4a3e;
+    --c-electronics-bg: #d7ddd5;
+    --c-fixed: #6b4423;
+    --c-fixed-bg: #e2d6c4;
+    --c-loose: #8a5a3b;
+    --c-loose-bg: #ead9c6;
+    --c-amenities: #5d5b8c;
+    --c-amenities-bg: #d9d6e2;
+    --c-cleaning: #7a6b3d;
+    --c-cleaning-bg: #dcd5be;
+    --c-amenity: #5d5b8c;
+    --c-amenity-bg: #d9d6e2;
+    --c-signage: #5e4a1f;
+    --c-signage-bg: #e8dfc8;
+
+    --s-upgrade-bg: #d4a829;
+    --s-upgrade-ink: #000;
+    --s-new: #2d4a3e;
+    --s-new-bg: #c8d3cc;
+    --s-asis: #6b665d;
+
+    --display: 'Bricolage Grotesque', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --max-w: 1440px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--display);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a { color: inherit; }
+
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible { outline-offset: 3px; }
+
+  mark {
+    background: var(--s-upgrade-bg);
+    color: var(--ink);
+    padding: 0 2px;
+    font-weight: 600;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 12px 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    z-index: 200;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 8px; }
+
+  /* ═══ Top strip ═══ */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .topbar .brand { font-weight: 500; }
+  .topbar .center { color: var(--ink-mute); }
+  .topbar .right { display: flex; align-items: center; gap: 16px; }
+  .topbar .divider { width: 1px; height: 12px; background: var(--ink-mute); opacity: 0.4; }
+
+  /* ═══ Header ═══ */
+  .header {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 48px 32px 32px;
+  }
+  .header-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .villa-pill {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 4px 10px;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--ink);
+    max-width: 1100px;
+  }
+  .header h1 .by {
+    font-weight: 300;
+    color: var(--ink-mute);
+  }
+  .header .lede {
+    margin-top: 18px;
+    font-size: 15px;
+    color: var(--ink-mute);
+    max-width: 580px;
+    line-height: 1.55;
+  }
+
+  /* ═══ Tabs ═══ */
+  .tabs-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--ink);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-bottom: none;
+    margin-bottom: -1px;
+    padding: 14px 22px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    min-height: 44px;
+  }
+  .tab-btn:not(:last-of-type) { border-right: none; }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active {
+    background: var(--bg);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .tab-btn .count {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 2px 7px;
+    font-size: 10px;
+    color: var(--ink-mute);
+  }
+  .tab-btn.active .count {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  /* ═══ Stats ═══ */
+  .stats-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 32px 32px 24px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .stats.stats-branding {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat {
+    padding: 28px 24px 24px;
+    border-right: 1px solid var(--line);
+    position: relative;
+    transition: background 0.2s;
+    text-align: left;
+    background: transparent;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+  }
+  .stat:hover { background: var(--bg-soft); }
+  .stat:last-child { border-right: none; }
+  .stat-no {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: clamp(48px, 6vw, 84px);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .stat[data-accent="upgrade"] .stat-num::after {
+    content: '';
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--s-upgrade-bg);
+    border-radius: 50%;
+    margin-left: 8px;
+    transform: translateY(-18px);
+  }
+  .stat[data-accent="new"] .stat-num { color: var(--s-new); }
+  .stat-label {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* ═══ Disclaimer ═══ */
+  .disclaimer-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px 24px;
+  }
+  .disclaimer {
+    background: var(--bg-soft);
+    border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--ink);
+    padding: 14px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .disclaimer-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--ink-mute);
+    margin-top: 2px;
+  }
+  .disclaimer-icon svg {
+    width: 100%; height: 100%;
+    stroke-width: 1.8;
+  }
+  .disclaimer-body { flex: 1; min-width: 0; }
+  .disclaimer-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .disclaimer-text {
+    font-family: var(--display);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  /* ═══ Toolbar ═══ */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(232, 227, 218, 0.94);
+    backdrop-filter: saturate(160%) blur(16px);
+    -webkit-backdrop-filter: saturate(160%) blur(16px);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    transition: padding 0.2s ease;
+  }
+  .toolbar.compact .toolbar-row-2,
+  .toolbar.compact .toolbar-secondary { display: none; }
+  .toolbar-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: grid;
+    grid-template-columns: 240px 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .search-box { position: relative; }
+  .search-box svg {
+    position: absolute;
+    left: 12px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink-mute);
+    width: 14px; height: 14px;
+    pointer-events: none;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 11px 14px 11px 34px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    min-height: 44px;
+  }
+  .search-box input:focus { outline: none; background: var(--bg-card); }
+  .search-box input::placeholder {
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-row::-webkit-scrollbar { display: none; }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 36px;
+  }
+  .chip:hover { background: var(--ink); color: var(--bg); }
+  .chip.active { background: var(--ink); color: var(--bg); }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .chip .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .chip[data-status="Upgrade"] .dot { background: var(--s-upgrade-bg); }
+  .chip[data-status="New"] .dot { background: var(--s-new); }
+  .chip[data-status="As Is"] .dot { background: var(--ink-mute); border: 1px solid var(--ink); }
+  .chip[data-cat="Electronics & Appliances"] .dot { background: var(--c-electronics); }
+  .chip[data-cat="Fixed Furniture"] .dot { background: var(--c-fixed); }
+  .chip[data-cat="Loose Furniture"] .dot { background: var(--c-loose); }
+  .chip[data-cat="Amenities"] .dot { background: var(--c-amenities); }
+  .chip[data-cat="Cleaning Tools"] .dot { background: var(--c-cleaning); }
+  .chip[data-cat="In-Room Amenities"] .dot { background: var(--c-amenity); }
+  .chip[data-cat="Signage"] .dot { background: var(--c-signage); }
+
+  .toolbar-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 32px 12px;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .toolbar-secondary .filters-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .clear-btn {
+    background: transparent;
+    border: none;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 6px 0;
+    min-height: 32px;
+  }
+  .result-count strong { color: var(--ink); font-weight: 600; }
+  .share-btn {
+    background: transparent;
+    border: 1px solid var(--ink-mute);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .share-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .share-btn svg { width: 11px; height: 11px; stroke-width: 2; }
+  .share-btn.copied { background: var(--s-new); color: #fff; border-color: var(--s-new); }
+
+  .mobile-filter-btn { display: none; }
+  .mobile-drawer { display: none; }
+
+  /* ═══ Content ═══ */
+  .content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 56px 32px;
+  }
+
+  .group { margin-bottom: 80px; }
+  .group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+    padding: 20px 0 18px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  .group-header::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: -1px; bottom: -1px;
+    width: 6px;
+    background: var(--accent, var(--ink));
+  }
+  .group-title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+  }
+  .group-no {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    flex-shrink: 0;
+  }
+  .group-title {
+    font-family: var(--display);
+    font-size: clamp(24px, 3.2vw, 42px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .group-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    flex-shrink: 0;
+  }
+  .group-empty {
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-mute);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+
+  .card {
+    background: var(--bg-soft);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.2s ease;
+    position: relative;
+    min-height: 240px;
+  }
+  .card:hover {
+    background: var(--bg-card);
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+  }
+
+  .card.brand-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 14px;
+    min-height: 320px;
+  }
+  .card.brand-card .spec-zone { align-self: start; }
+  .card.brand-card .link-zone { align-self: end; }
+
+  .card-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .card-ribbon svg {
+    width: 9px; height: 9px;
+    stroke-width: 2.5;
+  }
+  .card[data-status="Upgrade"] .card-ribbon {
+    background: var(--s-upgrade-bg);
+    color: var(--s-upgrade-ink);
+  }
+  .card[data-status="New"] .card-ribbon {
+    background: var(--s-new);
+    color: #fff;
+  }
+  .card[data-status="As Is"] .card-ribbon { display: none; }
+  .card[data-status="Custom"] .card-ribbon {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .card-icon {
+    width: 44px; height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--cat-bg, var(--bg-card));
+    color: var(--cat-accent, var(--ink));
+    border: 1px solid var(--cat-accent, var(--line));
+  }
+  .card-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.6;
+  }
+  .card-qty {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 4px 8px;
+    margin-right: 60px;
+  }
+  .card[data-status="As Is"] .card-qty { margin-right: 0; }
+
+  .card-name {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .card-location {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-location::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--cat-accent, var(--ink-mute));
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .card-brand {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+  }
+  .card-brand .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .card-brand .from {
+    color: var(--ink-mute);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-transform: uppercase;
+  }
+  .card-brand .to {
+    color: var(--ink);
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--s-upgrade-bg);
+    padding: 2px 6px;
+  }
+  .card-brand .arrow {
+    color: var(--ink-mute);
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .card-brand .single {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .card-note {
+    font-family: var(--display);
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.45;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ═══ Branding cards ═══ */
+  .spec-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 12px;
+    align-items: start;
+    line-height: 1.45;
+  }
+  .spec-row .label {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 500;
+    padding-top: 1px;
+  }
+  .spec-row .value { color: var(--ink); word-break: break-word; }
+  .spec-row .value .dim-line { display: block; font-size: 10.5px; line-height: 1.5; }
+  .spec-empty {
+    font-family: var(--display);
+    font-size: 13px;
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: opacity 0.15s;
+    min-height: 36px;
+  }
+  .link-btn:hover { opacity: 0.85; }
+  .link-btn svg.icon-type, .link-btn svg.icon-arrow {
+    width: 12px; height: 12px;
+    stroke-width: 2;
+  }
+  .link-btn.disabled {
+    background: transparent;
+    color: var(--ink-mute);
+    border: 1px dashed var(--line-strong);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 100px 24px;
+  }
+  .empty h3 {
+    font-family: var(--display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .empty p {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .site-foot {
+    border-top: 1px solid var(--ink);
+    margin-top: 40px;
+  }
+  .site-foot-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 40px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .foot-block .foot-label {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .foot-block .foot-value {
+    font-family: var(--display);
+    font-size: 14px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+
+  .view { display: none; }
+  .view.active { display: block; }
+
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 14px 22px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    z-index: 200;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast svg { width: 14px; height: 14px; stroke-width: 2.5; }
+
+  @media (max-width: 1100px) {
+    .toolbar-inner { grid-template-columns: 1fr auto; }
+    .toolbar-inner .filter-row.status-row,
+    .toolbar-inner .filter-row.cat-row { display: none; }
+  }
+
+  @media (max-width: 760px) {
+    .topbar { padding: 12px 16px; font-size: 10px; }
+    .topbar .center { display: none; }
+    .topbar .right > span:not(.divider) { font-size: 9px; }
+
+    .header { padding: 32px 20px 24px; }
+    .header-tag { margin-bottom: 12px; font-size: 10px; }
+    .header h1 { font-size: clamp(26px, 8vw, 38px); }
+    .header .lede { font-size: 14px; margin-top: 14px; }
+
+    .tabs-wrap { padding: 0 16px; }
+    .tab-btn { padding: 12px 16px; font-size: 10px; flex: 1; justify-content: center; min-width: 0; }
+
+    .stats-wrap { padding: 24px 16px 20px; }
+    .stats, .stats.stats-branding { grid-template-columns: repeat(2, 1fr); }
+    .stat {
+      padding: 20px 16px 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stat:nth-child(even) { border-right: none; }
+    .stats .stat:nth-last-child(-n+2) { border-bottom: none; }
+    .stats-branding .stat:nth-child(3) {
+      grid-column: span 2;
+      border-right: none;
+      border-bottom: none;
+      text-align: center;
+    }
+    .stats-branding .stat:nth-child(3) .stat-num { font-size: 56px; }
+    .stat-no { margin-bottom: 16px; font-size: 9px; }
+    .stat-num { font-size: 44px; }
+    .stat-label { font-size: 10px; margin-top: 10px; }
+
+    .disclaimer-wrap { padding: 0 16px 20px; }
+    .disclaimer { padding: 12px 14px; gap: 10px; }
+    .disclaimer-text { font-size: 12.5px; }
+
+    .toolbar-inner { grid-template-columns: 1fr auto; gap: 10px; padding: 12px 16px; }
+    .toolbar-inner .filter-row { display: none; }
+
+    .mobile-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      background: var(--ink);
+      color: var(--bg);
+      border: 1px solid var(--ink);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      min-height: 44px;
+    }
+    .mobile-filter-btn svg { width: 14px; height: 14px; stroke-width: 2; }
+    .mobile-filter-btn .badge-count {
+      background: var(--s-upgrade-bg);
+      color: var(--ink);
+      font-size: 9px;
+      padding: 1px 5px;
+      margin-left: 4px;
+      font-weight: 600;
+    }
+
+    .toolbar-secondary { padding: 0 16px 10px; font-size: 9px; }
+
+    .mobile-drawer {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+    .mobile-drawer.open { transform: translateY(0); }
+    .drawer-head {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 1;
+    }
+    .drawer-close {
+      background: transparent;
+      border: none;
+      font-family: var(--mono);
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--ink);
+      line-height: 1;
+      padding: 4px 12px;
+      min-height: 40px;
+    }
+    .drawer-section { padding: 24px 20px; border-bottom: 1px solid var(--line); }
+    .drawer-section h4 {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .drawer-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .drawer-section .chip { padding: 11px 14px; font-size: 11px; }
+    .drawer-foot {
+      position: sticky;
+      bottom: 0;
+      padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+      background: var(--bg);
+      border-top: 1px solid var(--ink);
+      display: flex;
+      gap: 10px;
+    }
+    .drawer-foot button {
+      flex: 1;
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1px solid var(--ink);
+      min-height: 48px;
+    }
+    .drawer-foot .clear { background: transparent; color: var(--ink); }
+    .drawer-foot .apply { background: var(--ink); color: var(--bg); }
+
+    .content { padding: 32px 16px; }
+    .group { margin-bottom: 48px; }
+    .group-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 16px 0 14px;
+    }
+    .group-header::before { left: -16px; width: 4px; }
+    .group-title-wrap { flex-direction: column; align-items: flex-start; gap: 8px; width: 100%; }
+    .group-title { font-size: 26px; }
+
+    .grid { grid-template-columns: 1fr; }
+    .card { min-height: 0; padding: 20px; }
+    .card.brand-card { min-height: 0; }
+    .card-name { font-size: 18px; }
+    .spec-row { grid-template-columns: 70px 1fr; gap: 10px; }
+
+    .site-foot-inner {
+      padding: 28px 16px calc(28px + env(safe-area-inset-bottom));
+      grid-template-columns: 1fr;
+      gap: 24px;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .stat-num { font-size: 38px; }
+    .header h1 { font-size: 24px; }
+  }
+
+  @media (min-width: 1600px) {
+    .grid { grid-template-columns: repeat(auto-fill, minmax(300px, 320px)); justify-content: start; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card { animation: fadeUp 0.3s ease backwards; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="topbar" role="banner">
+  <div class="brand">CASA NIRA</div>
+  <div class="center">VILLA C3 · THE SANCTUARY</div>
+  <div class="right">
+    <span>UPGRADE DOC</span>
+    <span class="divider" aria-hidden="true"></span>
+    <span>2026</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-tag">
+    <span class="villa-pill">VILLA C3</span>
+    <span>· THE SANCTUARY</span>
+  </div>
+  <h1>Upgraded Inventory <span class="by">by Casa Nira Team</span></h1>
+  <p class="lede">A complete overview of inventory upgrades, new additions, and custom-branded items prepared for the villa.</p>
+</header>
+
+<nav class="tabs-wrap" aria-label="Page sections">
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" data-view="inventory" role="tab" aria-selected="true" aria-controls="view-inventory">
+      Inventory Upgrade
+      <span class="count" id="tab-inv-count" aria-label="items">0</span>
+    </button>
+    <button class="tab-btn" data-view="branding" role="tab" aria-selected="false" aria-controls="view-branding">
+      Custom Branding
+      <span class="count" id="tab-brand-count" aria-label="items">0</span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============================ INVENTORY VIEW ============================ -->
+<div class="view active" id="view-inventory" role="tabpanel">
+
+  <div class="stats-wrap">
+    <div class="stats" id="stats" role="list" aria-label="Inventory summary"></div>
+  </div>
+
+  <div class="disclaimer-wrap">
+    <div class="disclaimer" role="note">
+      <span class="disclaimer-icon" aria-hidden="true">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      </span>
+      <div class="disclaimer-body">
+        <div class="disclaimer-title">Please Note</div>
+        <div class="disclaimer-text">Slight changes on brand can still happen due to market condition and availability of the unit. Everything will be communicated.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar" id="inv-toolbar">
+    <div class="toolbar-inner">
+      <div class="search-box">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="search" placeholder="SEARCH ITEMS, BRANDS, NOTES…" aria-label="Search inventory items" />
+      </div>
+      <div class="filter-row cat-row" id="category-filters" role="group" aria-label="Filter by section"></div>
+      <button class="mobile-filter-btn" id="mobile-filter-btn" aria-label="Open filters">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+        FILTER
+        <span class="badge-count" id="active-filter-count" style="display:none" aria-label="Active filters">0</span>
+      </button>
+    </div>
+    <div class="toolbar-inner toolbar-row-2" style="border-top: 1px dashed var(--line); grid-template-columns: 1fr; padding-top: 0;">
+      <div class="filter-row status-row" id="status-filters" role="group" aria-label="Filter by status"></div>
+    </div>
+    <div class="toolbar-secondary">
+      <div class="filters-summary">
+        <span class="result-count" id="result-count" role="status" aria-live="polite"></span>
+        <button class="clear-btn" id="clear-btn" style="display:none;">CLEAR ALL</button>
+      </div>
+      <button class="share-btn" id="share-btn" aria-label="Copy link to share this view">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+        SHARE VIEW
+      </button>
+    </div>
+  </div>
+
+  <div class="content" id="content"></div>
+</div>
+
+<!-- ============================ BRANDING VIEW ============================ -->
+<div class="view" id="view-branding" role="tabpanel">
+
+  <div class="stats-wrap">
+    <div class="stats stats-branding" id="brand-stats" role="list" aria-label="Branding summary"></div>
+  </div>
+
+  <div class="disclaimer-wrap">
+    <div class="disclaimer" role="note">
+      <span class="disclaimer-icon" aria-hidden="true">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      </span>
+      <div class="disclaimer-body">
+        <div class="disclaimer-title">Please Note</div>
+        <div class="disclaimer-text">Material, finishes, and dimensions may be slightly adjusted based on production availability and final approval. Everything will be communicated.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar" id="brand-toolbar">
+    <div class="toolbar-inner">
+      <div class="search-box">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="brand-search" placeholder="SEARCH MATERIAL, FINISH, ITEM…" aria-label="Search branded items" />
+      </div>
+      <div class="filter-row cat-row" id="brand-category-filters" role="group" aria-label="Filter by category"></div>
+      <button class="mobile-filter-btn" id="brand-mobile-filter-btn" aria-label="Open filters">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+        FILTER
+        <span class="badge-count" id="brand-active-filter-count" style="display:none" aria-label="Active filters">0</span>
+      </button>
+    </div>
+    <div class="toolbar-secondary">
+      <div class="filters-summary">
+        <span class="result-count" id="brand-result-count" role="status" aria-live="polite"></span>
+        <button class="clear-btn" id="brand-clear-btn" style="display:none;">CLEAR ALL</button>
+      </div>
+      <button class="share-btn" id="brand-share-btn" aria-label="Copy link to share this view">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+        SHARE VIEW
+      </button>
+    </div>
+  </div>
+
+  <div class="content" id="brand-content"></div>
+</div>
+
+</main>
+
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Filter inventory" aria-modal="true">
+  <div class="drawer-head">
+    <span>FILTER</span>
+    <button class="drawer-close" id="drawer-close" aria-label="Close filters">✕</button>
+  </div>
+  <div class="drawer-section">
+    <h4>STATUS</h4>
+    <div class="drawer-chips" id="mobile-status-filters"></div>
+  </div>
+  <div class="drawer-section">
+    <h4>SECTION</h4>
+    <div class="drawer-chips" id="mobile-category-filters"></div>
+  </div>
+  <div class="drawer-foot">
+    <button class="clear" id="drawer-clear">RESET</button>
+    <button class="apply" id="drawer-apply">DONE · <span id="drawer-result-count">0</span></button>
+  </div>
+</div>
+
+<div class="mobile-drawer" id="brand-mobile-drawer" role="dialog" aria-label="Filter branding" aria-modal="true">
+  <div class="drawer-head">
+    <span>FILTER BRANDING</span>
+    <button class="drawer-close" id="brand-drawer-close" aria-label="Close filters">✕</button>
+  </div>
+  <div class="drawer-section">
+    <h4>CATEGORY</h4>
+    <div class="drawer-chips" id="brand-mobile-category-filters"></div>
+  </div>
+  <div class="drawer-foot">
+    <button class="clear" id="brand-drawer-clear">RESET</button>
+    <button class="apply" id="brand-drawer-apply">DONE · <span id="brand-drawer-result-count">0</span></button>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="site-foot-inner">
+    <div class="foot-block">
+      <div class="foot-label">VILLA</div>
+      <div class="foot-value">Casa Nira · Villa C3<br/>The Sanctuary · Uluwatu</div>
+    </div>
+    <div class="foot-block">
+      <div class="foot-label">DOCUMENT</div>
+      <div class="foot-value">Inventory Upgrade Document<br/>Last updated <span id="last-updated"></span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+  <span id="toast-msg">Link copied</span>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   INVENTORY DATA — Villa C3 · The Sanctuary 3BR
+   Baseline verified against 'Unit C3 | Casa Nira - Draft Furnishing Agreement.pdf' (Annex I, CN-C3-FURN-001)
+   ══════════════════════════════════════════════════════════ */
+const ITEMS = [
+  // ELECTRONICS & APPLIANCES
+  { cat: "Electronics & Appliances", name: "Smartlock", location: "Main Entrance", status: "As Is", qty: 1, prevBrand: "Onassis", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Smart TV 55\"", location: "Living Room", status: "Upgrade", qty: 1, prevBrand: "Samsung Smart TV", newBrand: null, note: "With Google TV" },
+  { cat: "Electronics & Appliances", name: "Smart TV 45\"", location: "All Bedrooms", status: "Upgrade", qty: 3, prevBrand: "Samsung Smart TV", newBrand: null, note: "With Google TV" },
+  { cat: "Electronics & Appliances", name: "AC Inverter 2 PK", location: "Living Room", status: "Upgrade", qty: 1, prevBrand: "Gree", newBrand: "Panasonic" },
+  { cat: "Electronics & Appliances", name: "AC Inverter 1.5 PK", location: "Dining, All Bedrooms", status: "Upgrade", qty: 4, prevBrand: "Gree", newBrand: "Panasonic" },
+  { cat: "Electronics & Appliances", name: "Fridge", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "LG", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Microwave", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Electrolux", newBrand: "Modena", note: "Switch brand" },
+  { cat: "Electronics & Appliances", name: "Oven", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Electrolux", newBrand: "Hafele", note: "Switch brand" },
+  { cat: "Electronics & Appliances", name: "Induction Stove + Downdraft", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Modena", newBrand: "Hafele", note: "Switch brand" },
+  { cat: "Electronics & Appliances", name: "Coffee Machine", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Nespresso", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Water Dispenser", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Modena", newBrand: "Polytron", note: "With new feature" },
+  { cat: "Electronics & Appliances", name: "Wifi", location: "Living Room", status: "Upgrade", qty: 1, prevBrand: "From Provider", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Router", location: "Living Room", status: "As Is", qty: 1, prevBrand: "TP-Link", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Wifi Access Point", location: "Master Bedroom, 2nd Floor", status: "As Is", qty: 2, prevBrand: "TP-Link", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Ceiling Fan", location: "Living Room, Outdoor Dining, All Bedroom", status: "As Is", qty: 5, prevBrand: "Ecolux", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Ceiling Speaker & Amplifier", location: "Living Room, Dining", status: "Upgrade", qty: 1, prevBrand: "Intelligent Electronics", newBrand: "Q Acoustics", note: "Premium audio upgrade from Intelligent Electronics to Q Acoustics; audiophile-grade in-ceiling speakers for guest experience" },
+  { cat: "Electronics & Appliances", name: "Hair Dryer", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Panasonic", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Water Heater", location: "All Bedrooms, Kitchen", status: "As Is", qty: 4, prevBrand: "Ariston", newBrand: null },
+  { cat: "Electronics & Appliances", name: "CCTV", location: "Villa Entrance", status: "Upgrade", qty: 1, prevBrand: "Ezviz", newBrand: "Onassis", note: "Brand switch from Ezviz to Onassis; matches smartlock brand for a unified smart-security ecosystem" },
+  { cat: "Electronics & Appliances", name: "Blender", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Philips", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Electric Kettle", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Azko", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Iron", location: "Master Bedroom", status: "As Is", qty: 1, prevBrand: "Philips", newBrand: null },
+  { cat: "Electronics & Appliances", name: "TV Stand", location: "Master Bedroom", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Electronics & Appliances", name: "Washer & Dryer Machine", location: "Laundry Room", status: "As Is", qty: 1, prevBrand: "Modena", newBrand: null },
+
+  // FIXED FURNITURE
+  { cat: "Fixed Furniture", name: "Wall Shelving", location: "Living Room", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Kitchen Cabinet Set", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Island", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Vanity Shelving", location: "Powder Room, All Bedrooms", status: "As Is", qty: 5, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Headboard Table + Base", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "TV Cabinet / Shelving", location: "Living Room, All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Wall Shelving", location: "All Bedrooms", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Wardrobe", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Vanity Shelving", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Outdoor Sofa", location: "Rooftop, Outdoor Terrace", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Freestanding Bathtub", location: "Master Bathroom", status: "As Is", qty: 1, prevBrand: "Villo New Zealand Terrazzo Tub", newBrand: null },
+  { cat: "Fixed Furniture", name: "Bathroom Mirror", location: "Master Bathroom", status: "Upgrade", qty: 1, prevBrand: "Custom Made", newBrand: null, note: "New feature: backlit LED behind mirror" },
+  { cat: "Fixed Furniture", name: "Bathroom Mirror", location: "2nd Bathroom, 3rd Bathroom", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Fixed Furniture", name: "Featured Mirror", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+
+  // LOOSE FURNITURE
+  { cat: "Loose Furniture", name: "Indoor Dining Table", location: "Dining", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Bar Stool", location: "Kitchen", status: "As Is", qty: 4, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Outdoor Dining Table", location: "Outdoor Terrace", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Outdoor Dining Chair", location: "Outdoor Terrace", status: "As Is", qty: 4, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Sunbed Base", location: "Outdoor Terrace", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Sunbed Mattress", location: "Outdoor Terrace", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Stool (Chair)", location: "Outdoor Shower", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Sofa Set", location: "Living Room", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Coffee Table Set", location: "Living Room", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Lazy Chair", location: "Master Bedroom", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Paintings", location: "Living Room, Dining Room, All Bedrooms", status: "As Is", qty: 6, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Bedroom Mattress", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Turu", newBrand: null },
+  { cat: "Loose Furniture", name: "Bed Stool", location: "Master Bedroom", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Hanging Lamp", location: "Living Room, Master Bedroom", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Hanging Lamp", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Table Lamp", location: "Living Room, All Bedrooms", status: "As Is", qty: 4, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Towel Rack", location: "Master Bathroom", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Working Chair", location: "2nd Bedroom, 3rd Bedroom", status: "As Is", qty: 2, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Bathtub Table Tray", location: "Master Bedroom", status: "Upgrade", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Vases", location: "Outdoor Terrace, Living Room, Master Bedroom", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Carpet", location: "Living Room, Bedroom", status: "As Is", qty: 4, prevBrand: "Custom Made / Fio Carpet", newBrand: null },
+  { cat: "Loose Furniture", name: "Outdoor Coffee Table", location: "Rooftop", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Loose Furniture", name: "Bathroom Wooden Tray", location: "Master Bathroom", status: "New", qty: 2, prevBrand: null, newBrand: null, note: "New addition for tub-side amenity placement (candles, drink, book)" },
+  { cat: "Loose Furniture", name: "Living Room Statement Tray", location: "Living Room", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New decorative coffee-table tray (statement styling piece)" },
+  { cat: "Loose Furniture", name: "Luggage Holder", location: "Living Room", status: "New", qty: 3, prevBrand: null, newBrand: null, note: "New guest amenity" },
+
+  // AMENITIES
+  { cat: "Amenities", name: "Curtain", location: "All Rooms", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Sofa Linen", location: "Living Room", status: "As Is", qty: 1, prevBrand: "Indolinen / Custom Local", newBrand: null },
+  { cat: "Amenities", name: "Table Flower Vase", location: "All Rooms", status: "As Is", qty: 7, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Shelving Decor", location: "All Rooms", status: "As Is", qty: 4, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Tissue Box", location: "All Rooms", status: "As Is", qty: 4, prevBrand: "Azco", newBrand: null },
+  { cat: "Amenities", name: "Glassware Set", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Art on the Table", newBrand: "Sango" },
+  { cat: "Amenities", name: "Cutlery Set", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Art on the Table", newBrand: "Bolde" },
+  { cat: "Amenities", name: "Cooking Pan Set", location: "Kitchen", status: "Upgrade", qty: 1, prevBrand: "Stein", newBrand: "Bolde" },
+  { cat: "Amenities", name: "Napkin Set", location: "Kitchen", status: "As Is", qty: 1, prevBrand: "Informa", newBrand: null },
+  { cat: "Amenities", name: "Pillow Set", location: "All Bedrooms", status: "Upgrade", qty: 3, prevBrand: "DDPillow", newBrand: null },
+  { cat: "Amenities", name: "Mattress Linen Set", location: "All Bedrooms", status: "Upgrade", qty: 3, prevBrand: "Indolinen", newBrand: null },
+  { cat: "Amenities", name: "Blanket", location: "All Bedrooms", status: "Upgrade", qty: 3, prevBrand: "Indolinen", newBrand: null },
+  { cat: "Amenities", name: "Mattress Protector", location: "All Bedrooms", status: "Upgrade", qty: 3, prevBrand: "Turu Mattress Protector", newBrand: null },
+  { cat: "Amenities", name: "Bath Towel Set", location: "All Bathroom", status: "Upgrade", qty: 3, prevBrand: "Terry Palmer Hotelier", newBrand: null },
+  { cat: "Amenities", name: "Pool Towel Set", location: "All Bathroom", status: "Upgrade", qty: 3, prevBrand: "Terry Palmer Hotelier", newBrand: "Madeem" },
+  { cat: "Amenities", name: "Soap & Shampoo Set", location: "All Bathroom", status: "As Is", qty: 3, prevBrand: "Botanical Essential", newBrand: null },
+  { cat: "Amenities", name: "Safety Deposit Box", location: "Master Bedroom", status: "As Is", qty: 1, prevBrand: "Azco", newBrand: null },
+  { cat: "Amenities", name: "Reed Diffuser", location: "Living Room, All Bedrooms", status: "As Is", qty: 4, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Pool Cleaning Kit", location: "Outdoor Shower / Storage", status: "As Is", qty: 1, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Hotel Slippers", location: "All Bedrooms", status: "As Is", qty: 3, prevBrand: "Custom Made", newBrand: null },
+  { cat: "Amenities", name: "Trash Can", location: "Kitchen, All Bedrooms, All Bathrooms", status: "As Is", qty: 8, prevBrand: "Informa", newBrand: null },
+  { cat: "Amenities", name: "Plates (Large / Main)", location: "Kitchen", status: "Upgrade", qty: 4, prevBrand: null, newBrand: "Sango", note: "Upgrade brand" },
+  { cat: "Amenities", name: "Plates (Small / Side)", location: "Kitchen", status: "Upgrade", qty: 4, prevBrand: null, newBrand: "Sango", note: "Upgrade brand" },
+  { cat: "Amenities", name: "Bowls (Soup / Cereal)", location: "Kitchen", status: "Upgrade", qty: 4, prevBrand: null, newBrand: "Sango", note: "Upgrade brand" },
+  { cat: "Amenities", name: "Bowls (Small / Snack)", location: "Kitchen", status: "Upgrade", qty: 4, prevBrand: null, newBrand: "Sango", note: "Upgrade brand" },
+  { cat: "Amenities", name: "Coffee Mugs / Glasses", location: "Kitchen", status: "New", qty: 4, prevBrand: null, newBrand: "Sango" },
+  { cat: "Amenities", name: "Tea Cups & Saucers", location: "Kitchen", status: "New", qty: 4, prevBrand: null, newBrand: "Sango" },
+  { cat: "Amenities", name: "Wine Glasses", location: "Kitchen", status: "New", qty: 4, prevBrand: null, newBrand: "Sango" },
+  { cat: "Amenities", name: "Champagne Flutes", location: "Kitchen", status: "New", qty: 4, prevBrand: null, newBrand: "Sango", note: "New glassware addition" },
+  { cat: "Amenities", name: "Chef's Knife Set", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: "Bolde", note: "New premium knife set" },
+  { cat: "Amenities", name: "French Press", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New — complements existing Nespresso coffee machine" },
+  { cat: "Amenities", name: "Spatula & Cooking Spoon Set", location: "Kitchen", status: "As Is", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Big Wood Cutting Board", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Small Wood Cutting Board", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Peeler", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Pitcher / Water Jug", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Corkscrew & Bottle Opener", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Tongs", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Salt & Pepper", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Coaster", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New: set of coasters with custom branding" },
+  { cat: "Amenities", name: "Display Cutleries", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New display set (countertop utensil holder)" },
+  { cat: "Amenities", name: "Dishwasher Tray", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New: spare rack / specialty tray for delicates" },
+  { cat: "Amenities", name: "Sharpener", location: "Kitchen", status: "New", qty: 1, prevBrand: null, newBrand: null, note: "New knife sharpener; pairs with the Chef's Knife Set" },
+  { cat: "Amenities", name: "Hand Towel", location: "All Bathroom", status: "Upgrade", qty: 4, prevBrand: "Terry Palmer Hotelier", newBrand: "King Koil" },
+  { cat: "Amenities", name: "Face Towel", location: "All Bathroom", status: "Upgrade", qty: 4, prevBrand: "Terry Palmer Hotelier", newBrand: "King Koil" },
+  { cat: "Amenities", name: "Bath Robe", location: "All Bathroom", status: "New", qty: 4, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Flat Sheet", location: "All Bedrooms", status: "As Is", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Duvet Cover", location: "All Bedrooms", status: "As Is", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Waterproof Mattress Protector", location: "All Bedrooms", status: "As Is", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Duvet Insert", location: "All Bedrooms", status: "As Is", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Pillow Case", location: "All Bedrooms", status: "New", qty: 4, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Decorative Pillow", location: "All Bedrooms", status: "New", qty: 4, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Fitted Sheet", location: "All Bedrooms", status: "New", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Pillow Microfiber", location: "All Bedrooms", status: "New", qty: 4, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Throw Blanket", location: "All Bedrooms", status: "New", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Coverlet", location: "All Bedrooms", status: "New", qty: 2, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Access Card Holder", location: "Outdoor", status: "New", qty: 6, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Access Card", location: "Outdoor", status: "New", qty: 6, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "QR Code Template", location: "Outdoor", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Post Card", location: "All Rooms", status: "New", qty: 6, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Note Pad", location: "All Rooms", status: "New", qty: 6, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Pen / Pencil", location: "All Rooms", status: "New", qty: 6, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Hang Tag Sign", location: "Outdoor", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Writing Pads", location: "All Rooms", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Amenities", name: "Individual Villa Sign", location: "Outdoor", status: "New", qty: 1, prevBrand: null, newBrand: null },
+
+  // CLEANING TOOLS
+  { cat: "Cleaning Tools", name: "Vacuum Cleaner", location: "Storage", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Cleaning Tools", name: "Broom & Dustpan", location: "Storage", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Cleaning Tools", name: "Floor Mop & Bucket", location: "Storage", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Cleaning Tools", name: "Squeegee & Scraper", location: "Storage", status: "New", qty: 1, prevBrand: null, newBrand: null },
+  { cat: "Cleaning Tools", name: "Toilet Brushes", location: "Storage", status: "New", qty: 4, prevBrand: null, newBrand: null },
+];
+
+/* ══════════════════════════════════════════════════════════
+   BRANDING DATA (shared catalog)
+   ══════════════════════════════════════════════════════════ */
+const BRANDED = [
+  { cat: "In-Room Amenities", name: "Access Card Holder", material: "Oldmill Bianco 300 / 350gsm", finishes: "Blind Emboss, Gold Foil, Print", dimension: "Overall: 132 × 125mm\nAssembled: 120 × 60mm\nFolded: 60 × 90mm", link: "https://drive.google.com/drive/folders/1jfJaLoTFJN_J-QTUto6PArCxEuv8S39Q?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Access Card", material: "Wood", finishes: "Card Engrave", dimension: "55 × 85mm", link: "https://drive.google.com/file/d/1q1-T_hshKsH4UKXAUr_JX6Xsc96BdGt_/view?usp=drive_link", linkType: "file" },
+  { cat: "In-Room Amenities", name: "Soap & Shampoo Label", material: "Vinyl", finishes: "Doff Lamination", dimension: "55 × 75mm", link: "https://drive.google.com/drive/folders/1aAzjt0Fz8BinYTEBtVVd-UE7ap2-u2aP?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Amenities Template Box", material: "Optional: Ivory Paper", finishes: "Printed on Textured Ivory Paper, Doff Lamination (if needed)", dimension: "Shower Cap Box: 70 × 70mm\nVanity Kit Box: 50 × 70mm\nToothbrush Box: 35 × 180mm", link: "https://drive.google.com/drive/folders/1yLdgQOoTsT1UW5Q3w2gAXlmtvOGCq30-?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "QR Code Template", material: "Aluminium 3mm", finishes: "Powder Coated", dimension: "75 × 200mm", link: "https://drive.google.com/drive/folders/1y_2BCKbanT1w6tcXwzQAIypkNFsIX6dJ?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Post Card", material: "Oldmill Bianco 300 / 350gsm", finishes: "Print", dimension: "148 × 105mm", link: "https://drive.google.com/drive/folders/1DA6oshvXYq5HkNAjxyFqZ8btNy_-0Ink?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Note Pad", material: null, finishes: null, dimension: null, link: "https://drive.google.com/drive/folders/1P_n6LbH9TyH754Ory-oigAjGkCzm_HT3?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Pen / Pencils", material: "Wooden Pencil", finishes: "Hot Stamping / Engraving", dimension: "175 × 8mm", link: "https://drive.google.com/drive/folders/1Wl1CAZp7SaT4vGLE1aEW28JrzsR3j50w?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Slippers / Sandals", material: "Cotton Terry / EVA Foam", finishes: "Embroidery / Screen Print on EVA Foam", dimension: "285 × 115mm", link: "https://drive.google.com/drive/folders/1pcxJzJJL1KteyYRjUYIBZeu3wc9ZT_Dy?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Bathrobe", material: "Polyester Thread", finishes: "Embroidery", dimension: "Bathrobe: 1200 × 1600mm\nLogo: 50 × 56mm", link: "https://drive.google.com/drive/folders/1-uELSrmhyTbJekZAR91PPvPZrrwECyH4?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Uniform", material: null, finishes: null, dimension: null, link: "https://drive.google.com/drive/folders/1wDsd69SkceMek_V_pZzpBV9GYJXN11HF?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Totebag", material: "Canvas", finishes: null, dimension: "40 × 40cm", link: "https://drive.google.com/drive/folders/1lJg7hFivrkbXs8azecjHxgx23Xx0z9g1?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Coconut Stamp", material: "Hot Stamping / Heat Branding", finishes: "Thermal Burn Mark (Natural)", dimension: "50 × 54.5mm", link: "https://drive.google.com/drive/folders/1554L3bUh0uSRXqHoW2f2bJOpXIU8E4OC?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Do Not Disturb Sign", material: "Aluminium", finishes: "Cut & Powder Coated", dimension: null, link: "https://drive.google.com/drive/folders/1-Xg2vquG-hSqRxC1sr0HbL7vvJjI10on?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Writing Pads", material: "Leather", finishes: "Embossed Logo", dimension: "225 × 310mm", link: "https://drive.google.com/drive/folders/12EOM_BIovfomcwBxu6DLoV3gb5cQ__zn?usp=drive_link", linkType: "folder" },
+  { cat: "In-Room Amenities", name: "Display Picture", material: null, finishes: null, dimension: null, link: "https://drive.google.com/drive/folders/1dqtufYEwDnhVfWk5MQKp2koFMD5a4jfc?usp=drive_link", linkType: "folder" },
+  { cat: "Signage", name: "Reception Signage", material: "Corten Steel", finishes: "Cutting Metal", dimension: "Overall Composition: 185 × 120cm", link: "https://drive.google.com/drive/folders/1Ycyo4STVEhFqCNqccyg2i8AaUbMqbi89?usp=drive_link", linkType: "folder" },
+  { cat: "Signage", name: "Wash Feet Signage", material: "Oracal 072", finishes: "Cutting Sticker", dimension: "Overall Composition: 33 × 43.3cm", link: "https://drive.google.com/drive/folders/1j6M_dIKuzQ67wASJuFjcVWo6NAKmd17y?usp=drive_link", linkType: "folder" },
+  { cat: "Signage", name: "Site Signages", material: "Corten Steel", finishes: "Cutting Metal", dimension: "Assets provided; dimensions adjusted per site requirements", link: "https://drive.google.com/drive/folders/1I6Yaos7qcxWN3vdahQq6rmdqRnpgvuAa?usp=drive_link", linkType: "folder" },
+  { cat: "Signage", name: "Way Finding Signage", material: null, finishes: null, dimension: null, link: "https://drive.google.com/drive/folders/10_ClHR9ytss93gvZd04hhj8wY_vaczET?usp=drive_link", linkType: "folder" },
+  { cat: "Signage", name: "Individual Villa Signage", material: "Corten Steel", finishes: "Cutting Metal", dimension: null, link: "https://drive.google.com/drive/folders/18T1Bemqh55Z3U-Mm0xwszwJIRBbIGn9O?usp=drive_link", linkType: "folder" },
+];
+
+/* ══════════════════════════════════════════════════════════
+   ICONS
+   ══════════════════════════════════════════════════════════ */
+const SVG = {
+  tv: '<rect x="2" y="7" width="20" height="13" rx="2"/><path d="m17 2-5 5-5-5"/>',
+  lock: '<rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  ac: '<path d="M2 12h20"/><path d="M2 5h20"/><path d="M2 19h20"/><path d="M7 8v8"/><path d="M17 8v8"/><path d="M12 8v8"/>',
+  fan: '<circle cx="12" cy="12" r="2"/><path d="M12 2v6"/><path d="M12 16v6"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="M2 12h6"/><path d="M16 12h6"/><path d="m4.93 19.07 4.24-4.24"/><path d="m14.83 9.17 4.24-4.24"/>',
+  fridge: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14"/>',
+  stove: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="9" r="2"/><circle cx="16" cy="9" r="2"/><path d="M3 15h18"/>',
+  microwave: '<rect x="2" y="4" width="20" height="15" rx="2"/><path d="M16 4v15"/><circle cx="19" cy="9" r="0.5" fill="currentColor"/><path d="M6 9h7"/><path d="M6 13h4"/>',
+  hood: '<path d="M4 8h16l-2-4H6L4 8z"/><path d="M4 8v6h16V8"/><path d="M8 14v3"/><path d="M16 14v3"/><path d="M12 14v3"/>',
+  coffee: '<path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v3"/><path d="M10 2v3"/><path d="M14 2v3"/>',
+  drop: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+  blender: '<path d="M6 2h12l-1 7H7L6 2z"/><path d="M7 9h10v8a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V9z"/><path d="M10 14h4"/>',
+  wifi: '<path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/>',
+  speaker: '<rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/><circle cx="12" cy="6" r="1"/>',
+  hair: '<path d="M2 13h6l3-7 4 14 3-7h4"/>',
+  camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+  iron: '<path d="M2 18h20l-2-9a4 4 0 0 0-4-3H8a4 4 0 0 0-4 3l-2 9z"/><path d="M2 18v2h20v-2"/>',
+  plate: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/>',
+  bowl: '<path d="M2 12h20a10 10 0 0 1-10 10A10 10 0 0 1 2 12z"/><path d="M12 12V2"/>',
+  wineGlass: '<path d="M8 22h8"/><path d="M12 14v8"/><path d="M5 2h14l-2 9a5 5 0 0 1-10 0L5 2z"/>',
+  knife: '<path d="m22 2-11 11"/><path d="M11 13 3 21l-1-1 8-8"/><path d="m15 6 6 6"/>',
+  napkin: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 3 18 18"/>',
+  salt: '<path d="M8 2h8l1 6H7l1-6z"/><rect x="6" y="8" width="12" height="14" rx="2"/>',
+  trash: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+  scrub: '<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M3 12h18"/>',
+  mirror: '<rect x="6" y="2" width="12" height="20" rx="6"/><path d="M9 18h6"/>',
+  bathtub: '<path d="M9 6c0-1 .6-2 2-2h2c1.4 0 2 1 2 2v4"/><path d="M2 12h20v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5v-3z"/>',
+  towel: '<path d="M4 4h16v16H4z"/><path d="M4 8h16"/><path d="M4 12h16"/><path d="M4 16h16"/>',
+  soap: '<path d="M5 22h14a2 2 0 0 0 2-2v-7H3v7a2 2 0 0 0 2 2z"/><path d="M3 13h18l-2-3H5L3 13z"/><path d="M12 5v5"/>',
+  bed: '<path d="M2 9V6"/><path d="M2 9v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9"/><path d="M2 14h20"/><path d="M7 11V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>',
+  pillow: '<path d="M4 6c0-1 1-2 2-2h12c1 0 2 1 2 2v12c0 1-1 2-2 2H6c-1 0-2-1-2-2V6z"/>',
+  safe: '<rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="14" cy="12" r="3"/>',
+  lamp: '<path d="M9 2h6l3 7H6l3-7z"/><path d="M12 9v13"/><path d="M9 22h6"/>',
+  vase: '<path d="M8 2h8"/><path d="M9 2v3c0 2-3 4-3 7v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8c0-3-3-5-3-7V2"/>',
+  art: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
+  carpet: '<rect x="2" y="6" width="20" height="12" rx="1"/><path d="M2 10h20"/><path d="M2 14h20"/>',
+  sofa: '<path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/>',
+  chair: '<path d="M5 22V11"/><path d="M19 22V11"/><path d="M5 11h14V8a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v3z"/><path d="M5 15h14"/>',
+  table: '<path d="M3 8h18"/><path d="M5 8v13"/><path d="M19 8v13"/><path d="M3 8c0-2 2-3 9-3s9 1 9 3"/>',
+  cabinet: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 12h16"/><path d="M12 3v18"/>',
+  sunbed: '<path d="M2 18h20"/><path d="M4 14h16l-1-3a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2l-1 3z"/>',
+  surf: '<path d="M3 21s4-2 9-2 9 2 9 2"/><ellipse cx="12" cy="11" rx="3" ry="9"/>',
+  curtain: '<path d="M4 3h16v18l-3-2-3 2-2-2-2 2-3-2-3 2V3z"/>',
+  luggage: '<rect x="6" y="6" width="12" height="15" rx="2"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>',
+  pen: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+  rack: '<path d="M4 4h16"/><path d="M4 9h16"/><path d="M4 14h16"/><path d="M4 19h16"/>',
+  broom: '<path d="m13 11 9-9"/><path d="M14.6 12.6c.8.8.8 2 0 2.8l-3 3a2 2 0 0 1-2.8 0L4 13.6a2 2 0 0 1 0-2.8l3-3c.8-.8 2-.8 2.8 0"/>',
+  washer: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2"/>',
+  card: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+  label: '<path d="M5 2h11l5 5v15H5z"/><path d="M16 2v5h5"/>',
+  box: '<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+  qr: '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h2v2"/>',
+  postcard: '<rect x="2" y="5" width="20" height="14" rx="1"/><path d="M14 9h5"/><path d="M14 12h5"/>',
+  notepad: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h3"/>',
+  slipper: '<path d="M3 18c0-3 3-5 6-5h9a3 3 0 0 1 3 3v0a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/>',
+  robe: '<path d="M6 3l6 4 6-4"/><path d="M6 3v18h12V3"/><path d="M6 12h12"/>',
+  shirt: '<path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>',
+  bag: '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+  stamp: '<path d="M5 22h14"/><path d="M19.27 17.73A2.5 2.5 0 0 0 17 14h-1.1a2 2 0 0 1-1.9-2.5l.4-1.5A2 2 0 0 0 12.5 7.5h-1A2 2 0 0 0 9.6 10l.4 1.5a2 2 0 0 1-1.9 2.5H7a2.5 2.5 0 0 0-2.27 3.73"/>',
+  sign: '<path d="M5 8l-3 3 3 3"/><path d="M19 8l3 3-3 3"/><path d="M9 11h6"/>',
+  signage: '<path d="M4 4h16v16H4z"/><path d="M9 11h6"/>',
+  steel: '<path d="M3 12L12 3l9 9-9 9z"/>',
+  picture: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
+  check: '<path d="M20 6L9 17l-5-5"/>',
+  star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  pool: '<path d="M2 12c1.5-2 4.5-2 6 0s4.5 2 6 0 4.5-2 6 0"/><path d="M2 18c1.5-2 4.5-2 6 0s4.5 2 6 0 4.5-2 6 0"/><path d="M2 6c1.5-2 4.5-2 6 0s4.5 2 6 0 4.5-2 6 0"/>',
+  default: '<circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/>'
+};
+
+function svgWrap(d) {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+}
+
+function iconFor(item) {
+  const n = item.name.toLowerCase();
+  if (n.includes("washer") || n.includes("dryer")) return svgWrap(SVG.washer);
+  if (n.includes("tv stand")) return svgWrap(SVG.tv);
+  if (n.includes("tv credenza") || n.includes("tv cabinet")) return svgWrap(SVG.cabinet);
+  if (n.includes("tv")) return svgWrap(SVG.tv);
+  if (n.includes("smartlock")) return svgWrap(SVG.lock);
+  if (n.includes("access card holder")) return svgWrap(SVG.card);
+  if (n.includes("access card")) return svgWrap(SVG.card);
+  if (n.includes("safety deposit") || n.includes("safe")) return svgWrap(SVG.safe);
+  if (n.includes("ac inverter")) return svgWrap(SVG.ac);
+  if (n.includes("ceiling fan") || (n.includes("fan") && !n.includes("flute"))) return svgWrap(SVG.fan);
+  if (n.includes("fridge")) return svgWrap(SVG.fridge);
+  if (n.includes("microwave")) return svgWrap(SVG.microwave);
+  if (n.includes("induction") || n.includes("stove")) return svgWrap(SVG.stove);
+  if (n.includes("exhaust") || n.includes("cooker hood") || n.includes("hood")) return svgWrap(SVG.hood);
+  if (n.includes("coffee machine") || n.includes("french press")) return svgWrap(SVG.coffee);
+  if (n.includes("water dispenser") || n.includes("kettle") || n.includes("water heater") || n.includes("pitcher") || n.includes("jug")) return svgWrap(SVG.drop);
+  if (n.includes("blender") || n.includes("cooking pan")) return svgWrap(SVG.blender);
+  if (n.includes("wifi") || n.includes("router") || n.includes("access point")) return svgWrap(SVG.wifi);
+  if (n.includes("speaker") || n.includes("amplifier")) return svgWrap(SVG.speaker);
+  if (n.includes("hair dryer")) return svgWrap(SVG.hair);
+  if (n.includes("cctv")) return svgWrap(SVG.camera);
+  if (n.includes("iron")) return svgWrap(SVG.iron);
+  if (n.includes("plate") || n.includes("dishwasher tray")) return svgWrap(SVG.plate);
+  if (n.includes("bowl")) return svgWrap(SVG.bowl);
+  if (n.includes("champagne") || n.includes("flute") || n.includes("wine glass") || n.includes("coffee mug") || n.includes("water glass") || n.includes("tea cup") || n.includes("corkscrew")) return svgWrap(SVG.wineGlass);
+  if (n.includes("knife") || n.includes("peeler") || n.includes("cutting") || n.includes("tongs") || n.includes("sharpener") || n.includes("cutleries") || n.includes("cutlery") || n.includes("spatula")) return svgWrap(SVG.knife);
+  if (n.includes("napkin") || n.includes("tissue") || n.includes("coaster")) return svgWrap(SVG.napkin);
+  if (n.includes("salt") || n.includes("pepper")) return svgWrap(SVG.salt);
+  if (n.includes("trash")) return svgWrap(SVG.trash);
+  if (n.includes("scrub")) return svgWrap(SVG.scrub);
+  if (n.includes("mirror")) return svgWrap(SVG.mirror);
+  if (n.includes("bathtub") || (n.includes("freestanding") && n.includes("tub"))) return svgWrap(SVG.bathtub);
+  if (n.includes("bathrobe") || n.includes("bath robe") || n.includes("robe")) return svgWrap(SVG.robe);
+  if (n.includes("sandal") || n.includes("slipper")) return svgWrap(SVG.slipper);
+  if (n.includes("towel") || n.includes("bath mat")) return svgWrap(SVG.towel);
+  if (n.includes("soap") || n.includes("shampoo") || n.includes("diffuser")) return svgWrap(SVG.soap);
+  if (n.includes("pillow") && !n.includes("case")) return svgWrap(SVG.pillow);
+  if (n.includes("mattress") || n.includes("bed stool") || n.includes("headboard") || n.includes("sheet") || n.includes("duvet") || n.includes("coverlet") || n.includes("blanket") || n.includes("linen") || n.includes("throw")) return svgWrap(SVG.bed);
+  if (n.includes("lamp")) return svgWrap(SVG.lamp);
+  if (n.includes("vase") || n.includes("flower")) return svgWrap(SVG.vase);
+  if (n.includes("painting") || n.includes("display picture")) return svgWrap(SVG.picture);
+  if (n.includes("carpet")) return svgWrap(SVG.carpet);
+  if (n.includes("sofa") || n.includes("lazy chair")) return svgWrap(SVG.sofa);
+  if (n.includes("chair") || n.includes("stool")) return svgWrap(SVG.chair);
+  if (n.includes("table") || n.includes("tray")) return svgWrap(SVG.table);
+  if (n.includes("shelving") || n.includes("wardrobe") || n.includes("cabinet") || n.includes("island") || n.includes("decor")) return svgWrap(SVG.cabinet);
+  if (n.includes("sunbed")) return svgWrap(SVG.sunbed);
+  if (n.includes("surf")) return svgWrap(SVG.surf);
+  if (n.includes("pool")) return svgWrap(SVG.pool);
+  if (n.includes("curtain")) return svgWrap(SVG.curtain);
+  if (n.includes("luggage")) return svgWrap(SVG.luggage);
+  if (n.includes("totebag") || n.includes("tote")) return svgWrap(SVG.bag);
+  if (n.includes("uniform")) return svgWrap(SVG.shirt);
+  if (n.includes("stamp")) return svgWrap(SVG.stamp);
+  if (n.includes("qr")) return svgWrap(SVG.qr);
+  if (n.includes("post card") || n.includes("postcard")) return svgWrap(SVG.postcard);
+  if (n.includes("note pad") || n.includes("notepad") || n.includes("writing pad")) return svgWrap(SVG.notepad);
+  if (n.includes("box") || n.includes("template")) return svgWrap(SVG.box);
+  if (n.includes("label")) return svgWrap(SVG.label);
+  if (n.includes("disturb") || n.includes("hang tag") || n.includes("wash feet")) return svgWrap(SVG.sign);
+  if (n.includes("signage") || n.includes("villa sign") || n.includes("reception") || n.includes("villa sign")) return svgWrap(SVG.signage);
+  if (n.includes("way finding") || n.includes("site signage")) return svgWrap(SVG.steel);
+  if (n.includes("pen") || n.includes("pencil")) return svgWrap(SVG.pen);
+  if (n.includes("rack")) return svgWrap(SVG.rack);
+  if (n.includes("vacuum") || n.includes("broom") || n.includes("mop") || n.includes("squeegee") || n.includes("toilet brush")) return svgWrap(SVG.broom);
+  return svgWrap(SVG.default);
+}
+
+/* ══════════════════════════════════════════════════════════
+   STATE & URL ROUTING
+   ══════════════════════════════════════════════════════════ */
+const STATUS_ORDER = ["Upgrade", "New", "As Is"];
+const CATEGORIES = ["Electronics & Appliances", "Fixed Furniture", "Loose Furniture", "Amenities", "Cleaning Tools"];
+const CAT_SLUGS = { "Electronics & Appliances": "electronics", "Fixed Furniture": "fixed", "Loose Furniture": "loose", "Amenities": "amenities", "Cleaning Tools": "cleaning" };
+const BRAND_CATEGORIES = ["In-Room Amenities", "Signage"];
+const BRAND_CAT_SLUGS = { "In-Room Amenities": "amenity", "Signage": "signage" };
+
+const state = { search: "", statuses: new Set(), categories: new Set() };
+const brandState = { search: "", categories: new Set() };
+let currentView = "inventory";
+
+function parseURL() {
+  const hash = window.location.hash.slice(1);
+  const params = new URLSearchParams(window.location.search);
+  if (hash === "branding") currentView = "branding"; else currentView = "inventory";
+  if (currentView === "inventory") {
+    const status = params.get("status");
+    if (status) status.split(",").forEach(s => { if (STATUS_ORDER.includes(s)) state.statuses.add(s); });
+    const cat = params.get("cat");
+    if (cat) cat.split(",").forEach(c => { if (CATEGORIES.includes(c)) state.categories.add(c); });
+    const q = params.get("q");
+    if (q) state.search = q;
+  } else {
+    const cat = params.get("cat");
+    if (cat) cat.split(",").forEach(c => { if (BRAND_CATEGORIES.includes(c)) brandState.categories.add(c); });
+    const q = params.get("q");
+    if (q) brandState.search = q;
+  }
+}
+
+let urlTimer = null;
+function syncURL() {
+  clearTimeout(urlTimer);
+  urlTimer = setTimeout(() => {
+    const params = new URLSearchParams();
+    if (currentView === "inventory") {
+      if (state.statuses.size) params.set("status", [...state.statuses].join(","));
+      if (state.categories.size) params.set("cat", [...state.categories].join(","));
+      if (state.search) params.set("q", state.search);
+    } else {
+      if (brandState.categories.size) params.set("cat", [...brandState.categories].join(","));
+      if (brandState.search) params.set("q", brandState.search);
+    }
+    const hash = currentView === "branding" ? "#branding" : "";
+    const search = params.toString() ? `?${params.toString()}` : "";
+    history.replaceState(null, "", `${window.location.pathname}${search}${hash}`);
+  }, 200);
+}
+
+function highlight(text, query) {
+  if (!query || !text) return text;
+  const q = query.trim();
+  if (!q) return text;
+  const regex = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+  return text.replace(regex, '<mark>$1</mark>');
+}
+
+/* ══════════════════════════════════════════════════════════
+   INVENTORY RENDERERS
+   ══════════════════════════════════════════════════════════ */
+function renderStats() {
+  const counts = { total: ITEMS.length };
+  STATUS_ORDER.forEach(s => counts[s] = ITEMS.filter(i => i.status === s).length);
+  const stats = [
+    { no: "01", num: counts.total, label: "Total Items", accent: null, click: () => clearAll() },
+    { no: "02", num: counts["Upgrade"], label: "Upgraded", accent: "upgrade", click: () => filterTo("Upgrade") },
+    { no: "03", num: counts["New"], label: "New Additions", accent: "new", click: () => filterTo("New") },
+    { no: "04", num: counts["As Is"], label: "Retained", accent: null, click: () => filterTo("As Is") },
+  ];
+  const statsEl = document.getElementById("stats");
+  statsEl.innerHTML = '';
+  stats.forEach(s => {
+    const btn = document.createElement("button");
+    btn.className = "stat";
+    btn.setAttribute("role", "listitem");
+    btn.setAttribute("aria-label", `${s.num} ${s.label}`);
+    if (s.accent) btn.dataset.accent = s.accent;
+    btn.innerHTML = `<div class="stat-no">${s.no} /</div><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div>`;
+    btn.addEventListener('click', s.click);
+    statsEl.appendChild(btn);
+  });
+}
+
+function filterTo(status) {
+  state.statuses.clear(); state.statuses.add(status);
+  state.categories.clear(); state.search = "";
+  document.getElementById("search").value = "";
+  syncFilterUI(); render(); syncURL();
+  const el = document.getElementById('inv-toolbar');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildChip({ value, label, dataAttr, isActive, onClick }) {
+  const chip = document.createElement("button");
+  chip.className = "chip" + (isActive ? " active" : "");
+  chip.setAttribute(dataAttr, value);
+  chip.setAttribute("role", "checkbox");
+  chip.setAttribute("aria-pressed", isActive ? "true" : "false");
+  chip.setAttribute("aria-label", `Filter: ${label}`);
+  chip.innerHTML = `<span class="dot" aria-hidden="true"></span>${label}`;
+  chip.addEventListener("click", () => {
+    onClick();
+    chip.setAttribute("aria-pressed", chip.classList.contains("active") ? "true" : "false");
+  });
+  return chip;
+}
+
+function renderFilters() {
+  const statusEl = document.getElementById("status-filters");
+  const catEl = document.getElementById("category-filters");
+  const mobStatusEl = document.getElementById("mobile-status-filters");
+  const mobCatEl = document.getElementById("mobile-category-filters");
+  statusEl.innerHTML = ''; catEl.innerHTML = '';
+  mobStatusEl.innerHTML = ''; mobCatEl.innerHTML = '';
+
+  STATUS_ORDER.forEach(s => {
+    [statusEl, mobStatusEl].forEach(parent => {
+      parent.appendChild(buildChip({
+        value: s, label: s, dataAttr: "data-status",
+        isActive: state.statuses.has(s),
+        onClick: () => {
+          state.statuses.has(s) ? state.statuses.delete(s) : state.statuses.add(s);
+          syncFilterUI(); render(); syncURL();
+        }
+      }));
+    });
+  });
+  CATEGORIES.forEach(c => {
+    [catEl, mobCatEl].forEach(parent => {
+      const label = c.replace(" & Appliances", "").replace(" Furniture", " Furn.").replace(" Tools", "");
+      parent.appendChild(buildChip({
+        value: c, label: label, dataAttr: "data-cat",
+        isActive: state.categories.has(c),
+        onClick: () => {
+          state.categories.has(c) ? state.categories.delete(c) : state.categories.add(c);
+          syncFilterUI(); render(); syncURL();
+        }
+      }));
+    });
+  });
+}
+
+function syncFilterUI() {
+  document.querySelectorAll('.chip[data-status]').forEach(c => {
+    const active = state.statuses.has(c.dataset.status);
+    c.classList.toggle('active', active);
+    c.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+  document.querySelectorAll('#view-inventory .chip[data-cat], #mobile-drawer .chip[data-cat]').forEach(c => {
+    const active = state.categories.has(c.dataset.cat);
+    c.classList.toggle('active', active);
+    c.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function getFiltered() {
+  const q = state.search.trim().toLowerCase();
+  return ITEMS.filter(i => {
+    if (state.statuses.size && !state.statuses.has(i.status)) return false;
+    if (state.categories.size && !state.categories.has(i.cat)) return false;
+    if (q) {
+      const hay = [i.name, i.location, i.cat, i.prevBrand, i.newBrand, i.note].filter(Boolean).join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function cardHtml(item, idx) {
+  const slug = CAT_SLUGS[item.cat];
+  const catColorVars = `--cat-accent: var(--c-${slug}); --cat-bg: var(--c-${slug}-bg);`;
+  const q = state.search;
+  let brandHtml = "";
+  if (item.status === "Upgrade" && item.prevBrand && item.newBrand) {
+    brandHtml = `<div class="card-brand"><div class="brand-row"><span class="from">${highlight(item.prevBrand, q)}</span><span class="arrow">→</span><span class="to">${highlight(item.newBrand, q)}</span></div></div>`;
+  } else if (item.newBrand) {
+    brandHtml = `<div class="card-brand"><span class="single" style="background:var(--s-upgrade-bg);padding:2px 6px">${highlight(item.newBrand, q)}</span></div>`;
+  } else if (item.prevBrand) {
+    brandHtml = `<div class="card-brand"><span style="color:var(--ink-mute);text-transform:uppercase">${highlight(item.prevBrand, q)}</span></div>`;
+  }
+  const noteHtml = item.note ? `<div class="card-note">— ${highlight(item.note, q)}</div>` : "";
+  const ribbonIcon = item.status === "Upgrade" ? svgWrap(SVG.star) :
+                     item.status === "New" ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>' : '';
+  return `
+    <article class="card" data-status="${item.status}" style="${catColorVars} animation-delay:${Math.min(idx,15)*0.015}s" aria-label="${item.name}, ${item.status}">
+      <span class="card-ribbon" aria-hidden="true">${ribbonIcon}${item.status}</span>
+      <div class="card-top">
+        <div class="card-icon">${iconFor(item)}</div>
+        <div class="card-qty" aria-label="Quantity ${item.qty}">×${item.qty}</div>
+      </div>
+      <div>
+        <div class="card-name">${highlight(item.name, q)}</div>
+        <div class="card-location"><span aria-hidden="true"></span>${highlight(item.location || "—", q)}</div>
+      </div>
+      ${brandHtml}
+      ${noteHtml}
+    </article>
+  `;
+}
+
+function render() {
+  const filtered = getFiltered();
+  const content = document.getElementById("content");
+  document.getElementById("result-count").innerHTML = `<strong>${filtered.length}</strong> / ${ITEMS.length} ITEMS`;
+  document.getElementById("drawer-result-count").textContent = filtered.length;
+  document.getElementById("tab-inv-count").textContent = ITEMS.length;
+  const activeCount = state.statuses.size + state.categories.size;
+  const badgeEl = document.getElementById("active-filter-count");
+  if (activeCount > 0) { badgeEl.style.display = ""; badgeEl.textContent = activeCount; }
+  else { badgeEl.style.display = "none"; }
+  const hasFilters = state.statuses.size || state.categories.size || state.search;
+  document.getElementById("clear-btn").style.display = hasFilters ? "" : "none";
+
+  if (filtered.length === 0) {
+    content.innerHTML = `<div class="empty"><h3>NOTHING MATCHES</h3><p>Try adjusting your filters</p></div>`;
+    return;
+  }
+
+  const groupedByCat = new Map();
+  CATEGORIES.forEach(c => groupedByCat.set(c, []));
+  filtered.forEach(item => groupedByCat.get(item.cat).push(item));
+  groupedByCat.forEach(items => {
+    items.sort((a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status));
+  });
+
+  let visibleCats = CATEGORIES.filter(c => groupedByCat.get(c).length > 0);
+  if (state.categories.size) {
+    [...state.categories].forEach(c => { if (!visibleCats.includes(c)) visibleCats.push(c); });
+    visibleCats.sort((a, b) => CATEGORIES.indexOf(a) - CATEGORIES.indexOf(b));
+  }
+
+  content.innerHTML = visibleCats.map((catName, gIdx) => {
+    const items = groupedByCat.get(catName);
+    const slug = CAT_SLUGS[catName];
+    const accentStyle = `--accent: var(--c-${slug});`;
+    if (items.length === 0) {
+      return `<section class="group" style="${accentStyle}"><header class="group-header"><div class="group-title-wrap"><span class="group-no">${String(gIdx + 1).padStart(2, '0')} /</span><h2 class="group-title">${catName}</h2></div><span class="group-count">0 ITEMS</span></header><div class="group-empty">No items match the current filter in this section</div></section>`;
+    }
+    return `
+      <section class="group" style="${accentStyle}">
+        <header class="group-header">
+          <div class="group-title-wrap">
+            <span class="group-no">${String(gIdx + 1).padStart(2, '0')} /</span>
+            <h2 class="group-title">${catName}</h2>
+          </div>
+          <span class="group-count">${items.length} ${items.length === 1 ? 'ITEM' : 'ITEMS'}</span>
+        </header>
+        <div class="grid">${items.map((it, i) => cardHtml(it, i)).join("")}</div>
+      </section>`;
+  }).join("");
+}
+
+/* ══════════════════════════════════════════════════════════
+   BRANDING
+   ══════════════════════════════════════════════════════════ */
+function renderBrandStats() {
+  const total = BRANDED.length;
+  const amenityCount = BRANDED.filter(b => b.cat === "In-Room Amenities").length;
+  const signageCount = BRANDED.filter(b => b.cat === "Signage").length;
+  const stats = [
+    { no: "01", num: total, label: "Custom Items", click: () => clearBrandAll() },
+    { no: "02", num: amenityCount, label: "In-Room Amenities", click: () => filterBrandTo("In-Room Amenities") },
+    { no: "03", num: signageCount, label: "Signage", click: () => filterBrandTo("Signage") },
+  ];
+  const el = document.getElementById("brand-stats");
+  el.innerHTML = '';
+  stats.forEach(s => {
+    const btn = document.createElement("button");
+    btn.className = "stat";
+    btn.setAttribute("role", "listitem");
+    btn.setAttribute("aria-label", `${s.num} ${s.label}`);
+    btn.innerHTML = `<div class="stat-no">${s.no} /</div><div class="stat-num">${s.num}</div><div class="stat-label">${s.label}</div>`;
+    btn.addEventListener('click', s.click);
+    el.appendChild(btn);
+  });
+  document.getElementById("tab-brand-count").textContent = total;
+}
+
+function filterBrandTo(cat) {
+  brandState.categories.clear(); brandState.categories.add(cat);
+  brandState.search = "";
+  document.getElementById("brand-search").value = "";
+  syncBrandFilterUI(); renderBranding(); syncURL();
+  const el = document.getElementById('brand-toolbar');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderBrandFilters() {
+  const catEl = document.getElementById("brand-category-filters");
+  const mobCatEl = document.getElementById("brand-mobile-category-filters");
+  catEl.innerHTML = ''; mobCatEl.innerHTML = '';
+  BRAND_CATEGORIES.forEach(c => {
+    [catEl, mobCatEl].forEach(parent => {
+      parent.appendChild(buildChip({
+        value: c, label: c, dataAttr: "data-cat",
+        isActive: brandState.categories.has(c),
+        onClick: () => {
+          brandState.categories.has(c) ? brandState.categories.delete(c) : brandState.categories.add(c);
+          syncBrandFilterUI(); renderBranding(); syncURL();
+        }
+      }));
+    });
+  });
+}
+
+function syncBrandFilterUI() {
+  document.querySelectorAll('#view-branding .chip[data-cat], #brand-mobile-drawer .chip[data-cat]').forEach(c => {
+    const active = brandState.categories.has(c.dataset.cat);
+    c.classList.toggle('active', active);
+    c.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function getBrandFiltered() {
+  const q = brandState.search.trim().toLowerCase();
+  return BRANDED.filter(i => {
+    if (brandState.categories.size && !brandState.categories.has(i.cat)) return false;
+    if (q) {
+      const hay = [i.name, i.cat, i.material, i.finishes, i.dimension].filter(Boolean).join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function brandCardHtml(item, idx) {
+  const slug = BRAND_CAT_SLUGS[item.cat];
+  const catColorVars = `--cat-accent: var(--c-${slug}); --cat-bg: var(--c-${slug}-bg);`;
+  const q = brandState.search;
+  const specs = [];
+  if (item.material) specs.push({ label: "Material", value: highlight(item.material, q) });
+  if (item.finishes) specs.push({ label: "Finish", value: highlight(item.finishes, q) });
+  if (item.dimension) {
+    const dimLines = item.dimension.split('\n').map(line => `<span class="dim-line">${highlight(line, q)}</span>`).join('');
+    specs.push({ label: "Dimension", value: dimLines });
+  }
+  const specsHtml = specs.length
+    ? `<div class="spec-list">${specs.map(s => `<div class="spec-row"><span class="label">${s.label}</span><span class="value">${s.value}</span></div>`).join('')}</div>`
+    : `<div class="spec-empty">— Specifications to be confirmed</div>`;
+
+  const hasValidLink = item.link && item.link.trim() !== "" && item.link !== "#";
+  const linkTypeIcon = item.linkType === "file"
+    ? '<svg class="icon-type" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>'
+    : '<svg class="icon-type" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>';
+  const linkLabel = item.linkType === "file" ? "VIEW FILE" : "VIEW FOLDER";
+  const linkHtml = hasValidLink
+    ? `<a class="link-btn" href="${item.link}" target="_blank" rel="noopener" aria-label="${linkLabel} for ${item.name}">${linkTypeIcon}${linkLabel}<svg class="icon-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>`
+    : `<span class="link-btn disabled">REFERENCE COMING SOON</span>`;
+
+  return `
+    <article class="card brand-card" data-status="Custom" style="${catColorVars} animation-delay:${Math.min(idx,15)*0.015}s" aria-label="${item.name}, custom branded">
+      <span class="card-ribbon" aria-hidden="true">${svgWrap(SVG.check)}Custom</span>
+      <div class="card-top">
+        <div class="card-icon">${iconFor(item)}</div>
+      </div>
+      <div>
+        <div class="card-name">${highlight(item.name, q)}</div>
+        <div class="card-location"><span aria-hidden="true"></span>${item.cat}</div>
+      </div>
+      <div class="spec-zone">${specsHtml}</div>
+      <div class="link-zone">${linkHtml}</div>
+    </article>
+  `;
+}
+
+function renderBranding() {
+  const filtered = getBrandFiltered();
+  const content = document.getElementById("brand-content");
+  document.getElementById("brand-result-count").innerHTML = `<strong>${filtered.length}</strong> / ${BRANDED.length} ITEMS`;
+  document.getElementById("brand-drawer-result-count").textContent = filtered.length;
+  const activeCount = brandState.categories.size;
+  const badgeEl = document.getElementById("brand-active-filter-count");
+  if (activeCount > 0) { badgeEl.style.display = ""; badgeEl.textContent = activeCount; }
+  else { badgeEl.style.display = "none"; }
+  const hasFilters = brandState.categories.size || brandState.search;
+  document.getElementById("brand-clear-btn").style.display = hasFilters ? "" : "none";
+
+  if (filtered.length === 0) {
+    content.innerHTML = `<div class="empty"><h3>NOTHING MATCHES</h3><p>Try adjusting your filters</p></div>`;
+    return;
+  }
+
+  const groupedByCat = new Map();
+  BRAND_CATEGORIES.forEach(c => groupedByCat.set(c, []));
+  filtered.forEach(item => groupedByCat.get(item.cat).push(item));
+
+  let visibleCats = BRAND_CATEGORIES.filter(c => groupedByCat.get(c).length > 0);
+  if (brandState.categories.size) {
+    [...brandState.categories].forEach(c => { if (!visibleCats.includes(c)) visibleCats.push(c); });
+    visibleCats.sort((a, b) => BRAND_CATEGORIES.indexOf(a) - BRAND_CATEGORIES.indexOf(b));
+  }
+
+  content.innerHTML = visibleCats.map((catName, gIdx) => {
+    const items = groupedByCat.get(catName);
+    const slug = BRAND_CAT_SLUGS[catName];
+    const accentStyle = `--accent: var(--c-${slug});`;
+    if (items.length === 0) {
+      return `<section class="group" style="${accentStyle}"><header class="group-header"><div class="group-title-wrap"><span class="group-no">${String(gIdx + 1).padStart(2, '0')} /</span><h2 class="group-title">${catName}</h2></div><span class="group-count">0 ITEMS</span></header><div class="group-empty">No items match the current filter in this section</div></section>`;
+    }
+    return `
+      <section class="group" style="${accentStyle}">
+        <header class="group-header">
+          <div class="group-title-wrap">
+            <span class="group-no">${String(gIdx + 1).padStart(2, '0')} /</span>
+            <h2 class="group-title">${catName}</h2>
+          </div>
+          <span class="group-count">${items.length} ${items.length === 1 ? 'ITEM' : 'ITEMS'}</span>
+        </header>
+        <div class="grid">${items.map((it, i) => brandCardHtml(it, i)).join("")}</div>
+      </section>`;
+  }).join("");
+}
+
+/* ══════════════════════════════════════════════════════════
+   EVENTS
+   ══════════════════════════════════════════════════════════ */
+function switchView(view) {
+  currentView = view;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    const active = b.dataset.view === view;
+    b.classList.toggle('active', active);
+    b.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === `view-${view}`));
+  syncURL();
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchView(btn.dataset.view);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+document.getElementById("search").addEventListener("input", e => { state.search = e.target.value; render(); syncURL(); });
+document.getElementById("brand-search").addEventListener("input", e => { brandState.search = e.target.value; renderBranding(); syncURL(); });
+
+function clearAll() {
+  state.search = ""; state.statuses.clear(); state.categories.clear();
+  document.getElementById("search").value = "";
+  syncFilterUI(); render(); syncURL();
+}
+function clearBrandAll() {
+  brandState.search = ""; brandState.categories.clear();
+  document.getElementById("brand-search").value = "";
+  syncBrandFilterUI(); renderBranding(); syncURL();
+}
+document.getElementById("clear-btn").addEventListener("click", clearAll);
+document.getElementById("drawer-clear").addEventListener("click", clearAll);
+document.getElementById("brand-clear-btn").addEventListener("click", clearBrandAll);
+document.getElementById("brand-drawer-clear").addEventListener("click", clearBrandAll);
+
+const drawer = document.getElementById('mobile-drawer');
+document.getElementById('mobile-filter-btn').addEventListener('click', () => { drawer.classList.add('open'); document.body.style.overflow = 'hidden'; });
+document.getElementById('drawer-close').addEventListener('click', () => { drawer.classList.remove('open'); document.body.style.overflow = ''; });
+document.getElementById('drawer-apply').addEventListener('click', () => { drawer.classList.remove('open'); document.body.style.overflow = ''; });
+
+const brandDrawer = document.getElementById('brand-mobile-drawer');
+document.getElementById('brand-mobile-filter-btn').addEventListener('click', () => { brandDrawer.classList.add('open'); document.body.style.overflow = 'hidden'; });
+document.getElementById('brand-drawer-close').addEventListener('click', () => { brandDrawer.classList.remove('open'); document.body.style.overflow = ''; });
+document.getElementById('brand-drawer-apply').addEventListener('click', () => { brandDrawer.classList.remove('open'); document.body.style.overflow = ''; });
+
+function copyShareLink(btn) {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>COPIED`;
+    showToast("Link copied to clipboard");
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>SHARE VIEW`;
+    }, 2000);
+  }).catch(() => showToast("Could not copy link"));
+}
+document.getElementById('share-btn').addEventListener('click', e => copyShareLink(e.currentTarget));
+document.getElementById('brand-share-btn').addEventListener('click', e => copyShareLink(e.currentTarget));
+
+let toastTimer = null;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.querySelectorAll('.toolbar').forEach(t => t.classList.toggle('compact', scrolled > 500));
+}, { passive: true });
+
+const today = new Date();
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+document.getElementById('last-updated').textContent = `${months[today.getMonth()]} ${today.getFullYear()}`;
+
+/* INIT */
+parseURL();
+renderStats();
+renderFilters();
+render();
+renderBrandStats();
+renderBrandFilters();
+renderBranding();
+if (currentView === "branding") switchView("branding");
+
+window.addEventListener('popstate', () => {
+  parseURL();
+  document.getElementById("search").value = state.search;
+  document.getElementById("brand-search").value = brandState.search;
+  syncFilterUI(); syncBrandFilterUI();
+  switchView(currentView);
+  render(); renderBranding();
+});
+</script>
+</body>
+</html>
