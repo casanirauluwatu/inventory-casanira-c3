@@ -14,7 +14,7 @@
     --bg-card: #F2EEE6;
     --ink: #000000;
     --ink-soft: #1a1a1a;
-    --ink-mute: #6b665d;
+    --ink-mute: #68635a;
     --ink-faint: #9c9689;
     --line: #cdc6b8;
     --line-strong: #b8b09e;
@@ -470,6 +470,18 @@
   }
   .share-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .share-btn svg { width: 11px; height: 11px; stroke-width: 2; }
+
+  /* Touch target: WCAG 2.5.5 / iOS HIG minimum on small screens */
+  @media (max-width: 760px) {
+    .share-btn {
+      min-height: 44px;
+      padding: 10px 16px;
+    }
+    .drawer-close {
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
   .share-btn.copied { background: var(--s-new); color: #fff; border-color: var(--s-new); }
 
   .mobile-filter-btn { display: none; }
@@ -1059,6 +1071,91 @@
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     Print — renders the active view as a clean document.
+     Any filters left applied are respected, so a filtered
+     selection can be printed as its own schedule.
+     ═══════════════════════════════════════════════════════════ */
+  @media print {
+    @page { margin: 14mm 12mm; }
+
+    html, body {
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 9.5pt;
+    }
+
+    /* Screen-only chrome */
+    .skip-link,
+    .toolbar,
+    .mobile-drawer,
+    .share-btn,
+    .mobile-filter-btn,
+    .tabs-wrap,
+    .filters-summary { display: none !important; }
+
+    /* Keep the ribbons/counters meaningful — they carry status, not decoration */
+    .card-ribbon,
+    .count,
+    .stat-num,
+    mark {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .topbar {
+      border-bottom: 1px solid #000;
+      padding: 0 0 6mm;
+      position: static;
+    }
+
+    .header { padding: 6mm 0 4mm; }
+    .header h1 { font-size: 20pt; line-height: 1.1; }
+    .header .lede { font-size: 10pt; color: #000; }
+
+    .stats { break-inside: avoid; }
+    .stat { padding: 4mm 5mm; }
+    .stat-num { font-size: 18pt; }
+
+    /* Three across prints legibly on A4 without crowding */
+    .grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+      border-left: 1px solid #999;
+      border-top: 1px solid #999;
+    }
+    .card {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      min-height: 0;
+      padding: 4mm;
+      border-right: 1px solid #999;
+      border-bottom: 1px solid #999;
+      background: #fff !important;
+    }
+    .card:hover { transform: none; }
+    .card-name { font-size: 10.5pt; }
+    .card-note { font-size: 8pt; }
+    .card-icon { display: none; }
+
+    .group { break-inside: auto; }
+    .group-header {
+      break-after: avoid;
+      page-break-after: avoid;
+      break-inside: avoid;
+    }
+
+    /* Spell the links out — a printed hyperlink is otherwise dead */
+    .brand-card a[href^="http"]::after {
+      content: " (" attr(href) ")";
+      font-size: 7pt;
+      word-break: break-all;
+      font-family: var(--mono);
+    }
+
+    footer { break-inside: avoid; border-top: 1px solid #000; }
+    a { text-decoration: none; color: #000; }
   }
 </style>
 </head>
