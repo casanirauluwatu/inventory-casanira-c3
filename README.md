@@ -49,14 +49,17 @@ Changed:
 | Lazy Chair | LR + Master ×3 | Master Bedroom ×1 |
 | Trash Can | ×6 | ×8 |
 
-### Open items to confirm with the team
+### Resolved
 - **Baseline brands are not documented in C3's agreement** (no `Ex:` column). The
   `prevBrand` values shown are carried from the shared Casa Nira baseline
   (Onassis, Samsung, Gree, LG, Electrolux, Modena, Nespresso, TP-Link, Ecolux, Panasonic,
-  Ariston, Ezviz, Philips, Azko, Turu, Indolinen, Terry Palmer, etc.) and should be
-  confirmed before this goes to the owner.
-- **Ceiling Speaker & Amplifier ×1** is unusual (C1/C2 both have ×4) — worth double-checking
-  whether the annex means 1 *set* rather than 1 unit.
+  Ariston, Ezviz, Philips, Azko, Turu, Indolinen, Terry Palmer, etc.).
+  **Accepted as-is by the team** — carrying the shared baseline is intended behaviour here.
+- **Ceiling Speaker & Amplifier ×1** — the annex figure refers to 1 *set*, not 1 unit.
+  **Quantity confirmed correct; left at ×1.** (C1/C2 count the individual ceiling
+  speakers instead, which is why they read ×4.)
+
+### Open items to confirm with the team
 - Annex I lists the bathtub and bathroom mirrors under *Master Bedroom* / *All Bedrooms*;
   the page uses *Master Bathroom* / *All Bathrooms* for clarity.
 - The villa pill reads **VILLA C3** with no owner name (the client is a company,
